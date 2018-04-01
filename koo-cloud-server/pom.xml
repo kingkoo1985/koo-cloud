@@ -18,8 +18,8 @@
 		<module>koo-cloud-server-eureka</module>
 		<module>koo-cloud-server-gateway</module>
 		<module>koo-cloud-server-monitor</module>
-		<module>koo-cloud-server-discovery</module>
 		<module>koo-cloud-server-zipkin</module>
+		<module>koo-cloud-server-config</module>
 	</modules>
 	<build>
 		<plugins>
