@@ -1,0 +1,52 @@
+server:
+  port: 8010
+spring:
+  boot:
+    admin:
+      client:
+        metadata:
+          user:
+            name: ${security.user.name}
+            password: ${security.user.name}
+      monitor:
+        period: 60000
+      discovery:
+        enabled: true
+      notify:
+        mail:
+          to: xxxxxxxxx@qq.com
+          from: xxxxxxxxx@sina.com
+      turbine:
+        clusters: default
+        location: KOO-CLOUD-SERVER-MONITOR
+      routes:
+        endpoints: env,metrics,dump,jolokia,info,configprops,trace,logfile,refresh,flyway,liquibase,heapdump,loggers,auditevents,hystrix.stream,turbine.stream,activiti
+turbine:
+  app-config: KOO-CLOUD-PROVIDER-UAC,KOO-CLOUD-SERVER-GATEWAY 
+  cluster-name-expression: new String("default")
+info:
+  owner: kingkoo1985@gmail.com
+  version: 1.0.0
+management:
+  security:
+    enabled: false
+security:
+  user:
+    name: admin
+    password: admin
+  basic:
+    enabled: false
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://cloud-eureka:8761/eureka/
+  instance:
+      lease-renewal-interval-in-seconds: 30 # 设置心跳的时间间隔（默认是30秒）
+      lease-expiration-duration-in-seconds: 90 # 如果现在超过了5秒的间隔（默认是90秒）
+      instance-id: cloud-monitor  # 在信息列表时显示主机名称
+      prefer-ip-address: true     # 访问的路径变为IP地址  
+logging:
+  level:
+    root: info
+  path: logs/
+  file: ${spring.application.name}.log

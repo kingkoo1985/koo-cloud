@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.koo.cloud</groupId>
+		<artifactId>koo-cloud</artifactId>
+		<version>1.0.0</version>
+	</parent>
+	<properties>
+
+	</properties>
+	<packaging>pom</packaging>
+	<groupId>com.koo.cloud</groupId>
+	<artifactId>koo-cloud-provider</artifactId>
+	<version>1.0.0</version>
+	<name>koo-cloud-provider</name>
+	<url>http://maven.apache.org</url>
+
+	<modules>
+		<module>koo-cloud-provider-uac</module>
+		<module>koo-cloud-provider-mqc</module>
+    <module>koo-cloud-provider-client</module>
+  </modules>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<executions>
+					<execution>
+						<goals>
+							<goal>build-info</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+</project>

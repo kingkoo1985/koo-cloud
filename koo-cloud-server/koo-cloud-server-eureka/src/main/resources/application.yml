@@ -1,0 +1,11 @@
+server:
+  port: 8761
+spring.application.name: KOO-CLOUD-SERVER-EUREKA
+eureka:
+  instance:
+    hostname: cloud-eureka
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/

@@ -1,0 +1,3 @@
+spring:
+  application:
+    name: koo-cloud-server-gateway

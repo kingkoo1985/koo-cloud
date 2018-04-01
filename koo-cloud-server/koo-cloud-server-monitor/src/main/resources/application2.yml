@@ -1,0 +1,47 @@
+server:
+  port: 8010
+spring:
+  application:
+    name: koo-cloud-server-monitor
+  boot:
+    admin:
+      client:      
+        metadata:
+            user:
+              name: ${security.user.name}
+              password: ${security.user.password}
+      monitor:
+        period: 60000
+      discovery:
+        enabled: true     
+      turbine:
+        enabled: false
+        clusters: default
+        location: KOO-CLOUD-SERVER-MONITOR
+      routes:
+        endpoints: env,metrics,trace,dump,jolokia,info,configprops,trace,logfile,refresh,flyway,liquibase,heapdump,loggers,auditevents,hystrix.stream,turbine.stream,activiti
+management:
+  security:
+    enabled: false
+   
+turbine:
+  app-config: KOO-CLOUD-SERVER-GATEWAY,KOO-CLOUD-PROVIDER-UAC
+  cluster-name-expression: new String("default")
+  combine-host-port: true
+security:
+  user:
+    name: admin
+    password: admin
+  basic:
+    enabled: false
+eureka:
+  client:   
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/  
+info:
+  version: 1.0.0        
+logging:
+  level:
+    root: info
+  path: logs/
+  file: ${spring.application.name}.log

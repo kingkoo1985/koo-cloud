@@ -1,0 +1,26 @@
+server:
+  port: 8888
+spring:
+  rabbitmq:
+    host: rabbitmq-server
+    port: 5672
+    username: root
+    password: root
+    virtual-host: /
+  datasource:
+    schema: classpath:/zipkin.sql
+    url: jdbc:mysql://mysql-server:3306/zipkin?autoReconnect=true&useSSL=false
+    username: root
+    password: root
+    driver-class-name: org.gjt.mm.mysql.Driver
+    initialize: true
+    continueOnError: true
+  sleuth:
+    enabled: false
+  zipkin:
+    locator:
+      discovery:
+        enabled: true  
+zipkin:
+  storage:  # 设置zipkin收集的信息通过mysql进行存储
+    type: mysql
