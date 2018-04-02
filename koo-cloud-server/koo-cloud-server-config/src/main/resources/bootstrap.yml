@@ -1,0 +1,38 @@
+server:
+  port: 8800
+spring:
+  profiles:
+    active: '@profileActive@'                            #指定当前所使用的开发版本
+  application:    
+    name: koo-cloud-server-config
+  cloud:
+    config:
+      server:
+        git:
+          uri: git@github.com:kingkoo1985/koo-cloud-config.git  #为公共仓库
+          passphrase:                                           #无密码可留空
+          search-paths: /*
+ #提示抓取不到,请到git 下        ssh -T git@github.com 进行配置
+        
+#    inetutils:
+#      ignoredInterfaces:
+#        - docker0
+#        - veth.*
+#      preferredNetworks:
+#        - 192.168
+#server.jks 加密配置
+encrypt:
+  key-store:
+    location: classpath:/server.jks
+    password: ko-cloud-pass
+    alias: ko-cloud
+    secret: ko-cloud-store
+#eureka 配置必须放在bootstrap.yml中
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://cloud-eureka:8761/eureka/
+  instance:
+    prefer-ip-address: true     # 在地址栏上使用IP地址进行显示
+    instance-id: cloud-config-8800
+

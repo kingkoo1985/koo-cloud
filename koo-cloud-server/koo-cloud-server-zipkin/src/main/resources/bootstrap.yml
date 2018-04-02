@@ -7,4 +7,4 @@ spring:
       profile: ${spring.profiles.active}
       label: master
       uri: http://cloud-config:8800               #多个直接用逗号连接 http://root:root@cloud-config:8800
-      enabled: true
+      enabled: false
