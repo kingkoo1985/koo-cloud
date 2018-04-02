@@ -1,5 +1,5 @@
 server:
-  port: 8011
+  port: 8810
 spring:
   application:
     name: koo-cloud-server-monitor
@@ -15,4 +15,4 @@ logging:
   level:
     root: info
   path: logs/
-  file: ${spring.application.name}.log 
+  file: ${spring.application.name}.log

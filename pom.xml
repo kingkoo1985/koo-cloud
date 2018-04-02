@@ -35,7 +35,7 @@
 		<mapper.version>3.4.0</mapper.version>
 		<guava.version>17.0</guava.version>
 		<boot.admin.version>1.5.7</boot.admin.version>
-
+		<fastjson.version>1.2.29</fastjson.version>
 		<springfox.version>2.6.1</springfox.version>
 		<rocketmq.version>4.1.0-incubating</rocketmq.version>
 	</properties>
@@ -199,6 +199,13 @@
 				<artifactId>spring-boot-starter-data-redis</artifactId>
 				<version>2.0.0.RELEASE</version>
 			</dependency>
+			<!-- https://mvnrepository.com/artifact/com.alibaba/fastjson -->
+			<dependency>
+				<groupId>com.alibaba</groupId>
+				<artifactId>fastjson</artifactId>
+				<version>${fastjson.version}</version>
+			</dependency>
+
 		</dependencies>
 	</dependencyManagement>
 	<repositories>
