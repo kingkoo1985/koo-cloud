@@ -25,5 +25,6 @@
 		<module>koo-cloud-common-core</module>
 		<module>koo-cloud-common-server</module>
     <module>koo-cloud-common-security</module>
+    <module>koo-cloud-common-test</module>
   </modules>
 	</project>
